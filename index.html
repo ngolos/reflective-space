@@ -180,7 +180,36 @@
 
         .s-item h3 {
             font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .transformation {
+            font-size: 1.1em;
+            font-weight: bold;
             margin-bottom: 10px;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            border-left: 3px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .fire-element .transformation { border-left-color: #e74c3c; }
+        .water-element .transformation { border-left-color: #3498db; }
+        .earth-element .transformation { border-left-color: #27ae60; }
+        .air-element .transformation { border-left-color: #f39c12; }
+
+        .four-s-foundation {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .foundation-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            text-align: center;
         }
 
         .speed-comparison {
@@ -582,23 +611,39 @@
         </div>
 
         <div class="methodology">
-            <h2>🧘‍♀️ Core Methodology: "The Four S's"</h2>
+            <h2>🧘‍♀️ Core Methodology: Shadow-to-Light Transformation</h2>
+            <p style="margin-bottom: 30px; font-size: 1.1em; opacity: 0.9;">Throughout the Reflective Space Adventure, you'll meet four shadow archetypes that may live within you — and learn how to turn them into light. These are not labels — they are mirrors, helping you understand how survival patterns can become sources of freedom.</p>
+            
             <div class="four-s">
-                <div class="s-item">
-                    <h3>🐌 Slow Down</h3>
-                    <p>Proper pacing for sustainable success</p>
+                <div class="s-item fire-element">
+                    <h3>🔥 FIRE</h3>
+                    <div class="transformation">Prostitute → Lover</div>
+                    <p>The energy of passion, desire and worth. Moving from selling your soul for approval to standing confidently in your authentic truth and values.</p>
                 </div>
-                <div class="s-item">
-                    <h3>🎯 Simplify</h3>
-                    <p>Remove unnecessary complexity</p>
+                <div class="s-item water-element">
+                    <h3>💧 WATER</h3>
+                    <div class="transformation">Child → Sovereign</div>
+                    <p>The energy of identity and vision. Transforming from childish dependence to owning your power and becoming the conscious ruler of your life.</p>
                 </div>
-                <div class="s-item">
-                    <h3>💆‍♀️ Self-Care</h3>
-                    <p>Prioritize wellbeing</p>
+                <div class="s-item earth-element">
+                    <h3>🌍 EARTH</h3>
+                    <div class="transformation">Victim → Warrior</div>
+                    <p>The energy of foundation and resources. Stepping out of helplessness and into resourceful strength, building boundaries and reclaiming your space.</p>
                 </div>
-                <div class="s-item">
-                    <h3>🤫 Sit in Silence</h3>
-                    <p>Meditation and reflection</p>
+                <div class="s-item air-element">
+                    <h3>💨 AIR</h3>
+                    <div class="transformation">Saboteur → Magician</div>
+                    <p>The energy of transformation and intuition. Shifting from self-sabotage to trusting your inner knowing and transforming your reality.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.2);">
+                <h3 style="margin-bottom: 20px;">Foundation: "The Four S's"</h3>
+                <div class="four-s-foundation">
+                    <div class="foundation-item">🐌 <strong>Slow Down</strong> - Proper pacing</div>
+                    <div class="foundation-item">🎯 <strong>Simplify</strong> - Remove complexity</div>
+                    <div class="foundation-item">💆‍♀️ <strong>Self-Care</strong> - Prioritize wellbeing</div>
+                    <div class="foundation-item">🤫 <strong>Sit in Silence</strong> - Meditation & reflection</div>
                 </div>
             </div>
         </div>
