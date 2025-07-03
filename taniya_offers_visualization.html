@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taniya's Offer Suite</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .offer-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .offer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1));
+            pointer-events: none;
+        }
+
+        .flagship { border-left-color: #e74c3c; }
+        .membership { border-left-color: #3498db; }
+        .collection { border-left-color: #2ecc71; }
+        .consultation { border-left-color: #f39c12; }
+        .tarot { border-left-color: #9b59b6; }
+        .healing { border-left-color: #1abc9c; }
+        .simple { border-left-color: #34495e; }
+
+        .offer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .offer-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .offer-subtitle {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .format {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 0.8em;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .transformations {
+            margin-top: 15px;
+        }
+
+        .transformations h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .transformations ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .transformations li {
+            background: #f8f9fa;
+            padding: 8px 12px;
+            margin-bottom: 5px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .transformations li::before {
+            content: '✨';
+            position: absolute;
+            left: 10px;
+            top: 8px;
+        }
+
+        .methodology {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .methodology h2 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .four-s {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .s-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .s-item h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .client-results {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .client-results h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .result-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .result-card h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .result-card p {
+            color: #5a6c7d;
+            line-height: 1.6;
+        }
+
+        .speed-comparison {
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .speed-comparison h2 {
+            margin-bottom: 20px;
+        }
+
+        .speed-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .speed-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 768px) {
+            .offers-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌟 Taniya's Complete Offer Suite 🌟</h1>
+        
+        <div class="offers-grid">
+            <div class="offer-card flagship">
+                <div class="offer-header">
+                    <div>
+                        <div class="offer-title">OFFER A: Spiritual Alchemy Quest</div>
+                        <div class="offer-subtitle">Flagship Program</div>
+                    </div>
+                    <div class="price">£9,999-£11,111</div>
+                </div>
+                <div class="format">18 months intensive + 24/7 support</div>
+                <div class="transformations">
+                    <h4>4 Journey Components:</h4>
+                    <ul>
+                        <li>Personal Alchemy - Clarify unfulfillment</li>
+                        <li>Identity Alchemy - Explore relationships</li>
+                        <li>Practical Alchemy - Build sanctuary</li>
+                        <li>Emotional Alchemy - Break patterns</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="offer-card membership">
+                <div class="offer-header">
+                    <div>
+                        <div class="offer-title">OFFER B: Reflective Space</div>
+                        <div class="offer-subtitle">Membership for Coaches</div>
+                    </div>
+                    <div class="price">£197-£497/mo</div>
+                </div>
+                <div class="format">Group sessions 2x monthly on Zoom</div>
+                <div class="transformations">
+                    <h4>For Coaches/Therapists:</h4>
+                    <ul>
+                        <li>Professional clarity on difficult clients</li>
+                        <li>Shadow work - Prostitute, Victim, Saboteur</li>
+                        <li>Authentic pricing - stop undercharging</li>
+                        <li>Client magnetism</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="offer-card collection">
+                <div class="offer-header">
+                    <div>
+                        <div class="offer-title">OFFER C: Masterclass Collection</div>
+                        <div class="offer-subtitle">For New Coaches</div>
+                    </div>
+                    <div class="price">£497</div>
+                </div>
+                <div class="format">12 recorded masterclasses in Google Drive</div>
+                <div class="transformations">
+                    <h4>Business Foundations:</h4>
+                    <ul>
+                        <li>Personal branding through life story</li>
+                        <li>Sales confidence - overcome objections</li>
+                        <li>Work-life integration</li>
+                        <li>Strategic clarity</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="offer-card consultation">
+                <div class="offer-header">
+                    <div>
+                        <div class="offer-title">OFFER D: Consultation</div>
+                        <div class="offer-subtitle">Root Cause Diagnosis</div>
+                    </div>
+                    <div class="price">£497</div>
+                </div>
+                <div class="format">45-90 minute 1-on-1 Zoom session</div>
+                <div class="transformations">
+                    <h4>Immediate Results:</h4>
+                    <ul>
+                        <li>Root cause diagnosis</li>
+                        <li>Strategy/tips to solve independently</li>
+                        <li>Clarity breakthrough in single session</li>
+                        <li>Decision making guidance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="offer-card tarot">
+                <div class="offer-header">
+                    <div>
+                        <div class="offer-title">OFFER E: Sufi Tarot</div>
+                        <div class="offer-subtitle">Spiritual Guidance</div>
+                    </div>
+                    <div class="price">£497</div>
+                </div>
+                <div class="format">45-90 minute reading session</div>
+                <div class="transformations">
+                    <h4>Clarity & Direction:</h4>
+                    <ul>
+                        <li>Clarity at crossroads</li>
+                        <li>Mirror for current situation</li>
+                        <li>Spiritual guidance (Islamic/Sufi)</li>
+                        <li>Direction when feeling lost</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="offer-card healing">
+                <div class="offer-header">
+                    <div>
+                        <div class="offer-title">OFFER F: Energy Healing</div>
+                        <div class="offer-subtitle">Pain Relief Sessions</div>
+                    </div>
+                    <div class="price">£497</div>
+                </div>
+                <div class="format">1-off session: breathwork + body scanning</div>
+                <div class="transformations">
+                    <h4>Physical Relief:</h4>
+                    <ul>
+                        <li>Acute pain relief in 45 minutes</li>
+                        <li>Energetic untangling</li>
+                        <li>Deep relaxation lasting weeks</li>
+                        <li>Release stuck emotions from body</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="offer-card simple">
+                <div class="offer-header">
+                    <div>
+                        <div class="offer-title">OFFER G: Simple 1:1</div>
+                        <div class="offer-subtitle">Quick Access</div>
+                    </div>
+                    <div class="price">£148</div>
+                </div>
+                <div class="format">60-minute session, minimal form</div>
+                <div class="transformations">
+                    <h4>Accessibility:</h4>
+                    <ul>
+                        <li>Quick access for busy people</li>
+                        <li>Top-up sessions for previous clients</li>
+                        <li>Immediate support</li>
+                        <li>No complex application</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="methodology">
+            <h2>🧘‍♀️ Core Methodology: "The Four S's"</h2>
+            <div class="four-s">
+                <div class="s-item">
+                    <h3>🐌 Slow Down</h3>
+                    <p>Proper pacing for sustainable success</p>
+                </div>
+                <div class="s-item">
+                    <h3>🎯 Simplify</h3>
+                    <p>Remove unnecessary complexity</p>
+                </div>
+                <div class="s-item">
+                    <h3>💆‍♀️ Self-Care</h3>
+                    <p>Prioritize wellbeing</p>
+                </div>
+                <div class="s-item">
+                    <h3>🤫 Sit in Silence</h3>
+                    <p>Meditation and reflection</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="speed-comparison">
+            <h2>⚡ Speed of Results vs Other Coaches</h2>
+            <div class="speed-grid">
+                <div class="speed-item">
+                    <strong>Hours → Minutes</strong><br>
+                    What takes other coaches hours, Taniya achieves in minutes
+                </div>
+                <div class="speed-item">
+                    <strong>Months → Weeks</strong><br>
+                    What takes other coaches months, Taniya achieves in weeks
+                </div>
+                <div class="speed-item">
+                    <strong>Years → Months</strong><br>
+                    What takes other coaches years, Taniya achieves in months
+                </div>
+                <div class="speed-item">
+                    <strong>Decades → 1-2 Years</strong><br>
+                    What takes other coaches decades, Taniya achieves in 1-2 years
+                </div>
+            </div>
+        </div>
+
+        <div class="client-results">
+            <h2>🎯 Proven Client Results</h2>
+            <div class="results-grid">
+                <div class="result-card">
+                    <h3>💰 Liz - Business Owner</h3>
+                    <p>$45,000 revenue in 180 days, then another $450,000. Plus amicable divorce and son's ADHD label removed.</p>
+                </div>
+                <div class="result-card">
+                    <h3>💕 Asma - IT Executive</h3>
+                    <p>From suicidal to joyful marriage, pain-free, off steroids, eating solid foods again after 7 years.</p>
+                </div>
+                <div class="result-card">
+                    <h3>😴 Mumin - Ad Executive</h3>
+                    <p>From 2 years of insomnia to nightmare-free in 90 days. Sleeping normally again.</p>
+                </div>
+                <div class="result-card">
+                    <h3>📈 ROI Reported</h3>
+                    <p>3-10x financial return on investment. Exponential value beyond monetary measures. Permanent, lasting changes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
