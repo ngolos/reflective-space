@@ -183,43 +183,6 @@
             margin-bottom: 10px;
         }
 
-        .client-results {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin-top: 30px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .client-results h2 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .result-card {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid #e74c3c;
-        }
-
-        .result-card h3 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-
-        .result-card p {
-            color: #5a6c7d;
-            line-height: 1.6;
-        }
-
         .speed-comparison {
             background: linear-gradient(45deg, #2ecc71, #27ae60);
             color: white;
@@ -247,13 +210,50 @@
             backdrop-filter: blur(10px);
         }
 
-        .clickable {
-            cursor: pointer;
+        .client-results {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .client-results h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .result-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #e74c3c;
             transition: transform 0.2s ease;
         }
 
-        .clickable:hover {
+        .result-card.clickable {
+            cursor: pointer;
+        }
+
+        .result-card.clickable:hover {
             transform: scale(1.02);
+        }
+
+        .result-card h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .result-card p {
+            color: #5a6c7d;
+            line-height: 1.6;
         }
 
         .click-hint {
@@ -405,10 +405,6 @@
             color: #2c3e50;
         }
 
-        .stat-label {
-            color: #7f8c8d;
-            font-size: 0.9em;
-            margin-top: 5px;
         .stat-label {
             color: #7f8c8d;
             font-size: 0.9em;
@@ -814,300 +810,3 @@
                         phase: "Life Integration",
                         title: "🎯 Beyond Sleep Recovery",
                         content: "Next 3 months: Worked on career goals and assertiveness. Got promotion at advertising agency. Improved family relationships and learned to express himself.",
-                        type: "result"
-                    },
-                    {
-                        phase: "Long-term Success",
-                        title: "🌟 Permanent Transformation",
-                        content: "Nightmares never returned. Transformation was lasting. Went from feeling unsupported as only man in household of women to confident family member.",
-                        type: "result"
-                    }
-                ],
-                stats: [
-                    { number: "90 Days", label: "Nightmare-Free" },
-                    { number: "9 Sessions", label: "Total Sessions" },
-                    { number: "2 Years", label: "Insomnia Cured" },
-                    { number: "19 Years", label: "Age of Client" }
-                ]
-            }
-        };
-
-        function showJourney(clientName) {
-            const journey = journeyData[clientName];
-            const modal = document.getElementById('journeyModal');
-            const content = document.getElementById('journeyContent');
-            
-            let timelineHtml = '';
-            journey.timeline.forEach(item => {
-                timelineHtml += `
-                    <div class="timeline-item ${item.type}">
-                        <div class="timeline-phase">${item.phase}</div>
-                        <div class="timeline-title">${item.title}</div>
-                        <div class="timeline-content">${item.content}</div>
-                    </div>
-                `;
-            });
-
-            let statsHtml = '';
-            journey.stats.forEach(stat => {
-                statsHtml += `
-                    <div class="stat-card">
-                        <div class="stat-number">${stat.number}</div>
-                        <div class="stat-label">${stat.label}</div>
-                    </div>
-                `;
-            });
-            
-            content.innerHTML = `
-                <div class="journey-header">
-                    <h2>${journey.name}</h2>
-                    <div class="journey-subtitle">${journey.title}</div>
-                    <div style="margin-top: 10px; font-size: 1.1em;">${journey.subtitle}</div>
-                </div>
-                <div class="journey-body">
-                    <div class="stats-grid">
-                        ${statsHtml}
-                    </div>
-                    <div class="journey-timeline">
-                        ${timelineHtml}
-                    </div>
-                </div>
-            `;
-            
-            modal.style.display = 'block';
-        }
-
-        function closeJourney() {
-            document.getElementById('journeyModal').style.display = 'none';
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('journeyModal');
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        }
-    </script>
-        
-        <div class="offers-grid">
-            <div class="offer-card flagship">
-                <div class="offer-header">
-                    <div>
-                        <div class="offer-title">OFFER A: Spiritual Alchemy Quest</div>
-                        <div class="offer-subtitle">Flagship Program</div>
-                    </div>
-                    <div class="price">£9,999-£11,111</div>
-                </div>
-                <div class="format">28 weeks intensive + 24/7 support</div>
-                <div class="transformations">
-                    <h4>4 Journey Components:</h4>
-                    <ul>
-                        <li>Personal Alchemy - Clarify unfulfillment</li>
-                        <li>Identity Alchemy - Explore relationships</li>
-                        <li>Practical Alchemy - Build sanctuary</li>
-                        <li>Emotional Alchemy - Break patterns</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="offer-card membership">
-                <div class="offer-header">
-                    <div>
-                        <div class="offer-title">OFFER B: Reflective Space</div>
-                        <div class="offer-subtitle">Membership for Coaches</div>
-                    </div>
-                    <div class="price">£197-£497/mo</div>
-                </div>
-                <div class="format">Group sessions 2x monthly on Zoom</div>
-                <div class="transformations">
-                    <h4>For Coaches/Therapists:</h4>
-                    <ul>
-                        <li>Professional clarity on difficult clients</li>
-                        <li>Shadow work - Prostitute, Victim, Saboteur</li>
-                        <li>Authentic pricing - stop undercharging</li>
-                        <li>Client magnetism</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="offer-card collection">
-                <div class="offer-header">
-                    <div>
-                        <div class="offer-title">OFFER C: Masterclass Collection</div>
-                        <div class="offer-subtitle">For New Coaches</div>
-                    </div>
-                    <div class="price">£497</div>
-                </div>
-                <div class="format">12 recorded masterclasses in Google Drive</div>
-                <div class="transformations">
-                    <h4>Business Foundations:</h4>
-                    <ul>
-                        <li>Personal branding through life story</li>
-                        <li>Sales confidence - overcome objections</li>
-                        <li>Work-life integration</li>
-                        <li>Strategic clarity</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="offer-card consultation">
-                <div class="offer-header">
-                    <div>
-                        <div class="offer-title">OFFER D: Consultation</div>
-                        <div class="offer-subtitle">Root Cause Diagnosis</div>
-                    </div>
-                    <div class="price">£497</div>
-                </div>
-                <div class="format">45-90 minute 1-on-1 Zoom session</div>
-                <div class="transformations">
-                    <h4>Immediate Results:</h4>
-                    <ul>
-                        <li>Root cause diagnosis</li>
-                        <li>Strategy/tips to solve independently</li>
-                        <li>Clarity breakthrough in single session</li>
-                        <li>Decision making guidance</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="offer-card tarot">
-                <div class="offer-header">
-                    <div>
-                        <div class="offer-title">OFFER E: Sufi Tarot</div>
-                        <div class="offer-subtitle">Spiritual Guidance</div>
-                    </div>
-                    <div class="price">£497</div>
-                </div>
-                <div class="format">45-90 minute reading session</div>
-                <div class="transformations">
-                    <h4>Clarity & Direction:</h4>
-                    <ul>
-                        <li>Clarity at crossroads</li>
-                        <li>Mirror for current situation</li>
-                        <li>Spiritual guidance (Islamic/Sufi)</li>
-                        <li>Direction when feeling lost</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="offer-card healing">
-                <div class="offer-header">
-                    <div>
-                        <div class="offer-title">OFFER F: Energy Healing</div>
-                        <div class="offer-subtitle">Pain Relief Sessions</div>
-                    </div>
-                    <div class="price">£497</div>
-                </div>
-                <div class="format">1-off session: breathwork + body scanning</div>
-                <div class="transformations">
-                    <h4>Physical Relief:</h4>
-                    <ul>
-                        <li>Acute pain relief in 45 minutes</li>
-                        <li>Energetic untangling</li>
-                        <li>Deep relaxation lasting weeks</li>
-                        <li>Release stuck emotions from body</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="offer-card simple">
-                <div class="offer-header">
-                    <div>
-                        <div class="offer-title">OFFER G: Simple 1:1</div>
-                        <div class="offer-subtitle">Quick Access</div>
-                    </div>
-                    <div class="price">£148</div>
-                </div>
-                <div class="format">60-minute session, minimal form</div>
-                <div class="transformations">
-                    <h4>Accessibility:</h4>
-                    <ul>
-                        <li>Quick access for busy people</li>
-                        <li>Top-up sessions for previous clients</li>
-                        <li>Immediate support</li>
-                        <li>No complex application</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="methodology">
-            <h2>🧘‍♀️ Core Methodology: "The Four S's"</h2>
-            <div class="four-s">
-                <div class="s-item">
-                    <h3>🐌 Slow Down</h3>
-                    <p>Proper pacing for sustainable success</p>
-                </div>
-                <div class="s-item">
-                    <h3>🎯 Simplify</h3>
-                    <p>Remove unnecessary complexity</p>
-                </div>
-                <div class="s-item">
-                    <h3>💆‍♀️ Self-Care</h3>
-                    <p>Prioritize wellbeing</p>
-                </div>
-                <div class="s-item">
-                    <h3>🤫 Sit in Silence</h3>
-                    <p>Meditation and reflection</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="speed-comparison">
-            <h2>⚡ Speed of Results vs Other Coaches</h2>
-            <div class="speed-grid">
-                <div class="speed-item">
-                    <strong>Hours → Minutes</strong><br>
-                    What takes other coaches hours, Taniya achieves in minutes
-                </div>
-                <div class="speed-item">
-                    <strong>Months → Weeks</strong><br>
-                    What takes other coaches months, Taniya achieves in weeks
-                </div>
-                <div class="speed-item">
-                    <strong>Years → Months</strong><br>
-                    What takes other coaches years, Taniya achieves in months
-                </div>
-                <div class="speed-item">
-                    <strong>Decades → 1-2 Years</strong><br>
-                    What takes other coaches decades, Taniya achieves in 1-2 years
-                </div>
-            </div>
-        </div>
-
-        <div class="client-results">
-            <h2>🎯 Proven Client Results</h2>
-            <div class="results-grid">
-                <div class="result-card clickable" onclick="showJourney('liz')">
-                    <h3>💰 Liz - Business Owner</h3>
-                    <p>$45,000 revenue in 180 days, then another $450,000. Plus amicable divorce and son's ADHD label removed.</p>
-                    <div class="click-hint">Click to see full journey →</div>
-                </div>
-                <div class="result-card clickable" onclick="showJourney('asma')">
-                    <h3>💕 Asma - IT Executive</h3>
-                    <p>From suicidal to joyful marriage, pain-free, off steroids, eating solid foods again after 7 years.</p>
-                    <div class="click-hint">Click to see full journey →</div>
-                </div>
-                <div class="result-card clickable" onclick="showJourney('mumin')">
-                    <h3>😴 Mumin - Ad Executive</h3>
-                    <p>From 2 years of insomnia to nightmare-free in 90 days. Sleeping normally again.</p>
-                    <div class="click-hint">Click to see full journey →</div>
-                </div>
-                <div class="result-card">
-                    <h3>📈 ROI Reported</h3>
-                    <p>3-10x financial return on investment. Exponential value beyond monetary measures. Permanent, lasting changes.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Journey Modals -->
-        <div id="journeyModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeJourney()">&times;</span>
-                <div id="journeyContent"></div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
