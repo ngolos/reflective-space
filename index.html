@@ -1053,148 +1053,230 @@
             </div>
         </div>
     </div>
+    <script>
+        const journeyData = {
+            liz: {
+                name: "Liz",
+                title: "Business Owner & Coach",
+                subtitle: "From Business Bankruptcy to $495K Revenue + Life Freedom",
+                timeline: [
+                    {
+                        phase: "Crisis Point",
+                        title: "🔴 Pandemic Devastation",
+                        content: "March-June 2020: Successful 4-year offline coaching business drops to $0 revenue for 4 months. Considering online transition but feeling stuck and burnt out.",
+                        type: "trigger"
+                    },
+                    {
+                        phase: "First Contact",
+                        title: "⚡ The Breakthrough Session",
+                        content: "2019: Had chronic shoulder pain. After 90-minute consultation with Taniya, pain completely disappeared and felt relaxed for 2 weeks. This led to hiring Taniya for business recovery.",
+                        type: "journey"
+                    },
+                    {
+                        phase: "Phase 1",
+                        title: "🧘‍♀️ Personal Alchemy Journey",
+                        content: "July-December 2020: Learned 'The Four S's' - Slow Down, Simplify, Self-Care, Sit in Silence. Discovered shadow patterns (Prostitute, Victim, Saboteur, Child) through Biblical stories.",
+                        type: "journey"
+                    },
+                    {
+                        phase: "Business Results",
+                        title: "💰 Revenue Recovery",
+                        content: "180 days: Generated $45,000 using psychological tools learned from Taniya. Next 180 days: Generated another $450,000 independently using same tools.",
+                        type: "result"
+                    },
+                    {
+                        phase: "Phase 2",
+                        title: "🧬 Identity Alchemy Journey",
+                        content: "October 2021-July 2022: Explored relationships with God, husband, son, environment. Decided to end unhappy 10-year marriage. Learned to express rather than suppress emotions.",
+                        type: "journey"
+                    },
+                    {
+                        phase: "Life Transformation",
+                        title: "🏡 Practical Alchemy Journey",
+                        content: "Created sanctuary in bedroom with clear boundaries. Raised standards - moved to hotel when husband wouldn't finish bathroom, forcing him to complete it.",
+                        type: "journey"
+                    },
+                    {
+                        phase: "Final Results",
+                        title: "🎯 Complete Life Renewal",
+                        content: "10 months: Secured amicable divorce. Son's ADHD label removed after 8 sessions - discovered he was gifted/talented. Living life with joy and freedom.",
+                        type: "result"
+                    }
+                ],
+                stats: [
+                    { number: "$495K", label: "Total Revenue Generated" },
+                    { number: "10 Months", label: "To Amicable Divorce" },
+                    { number: "8 Sessions", label: "Son's ADHD Label Removed" },
+                    { number: "2 Years", label: "Total Work with Taniya" }
+                ]
+            },
+            asma: {
+                name: "Asma",
+                title: "IT Executive & Coach",
+                subtitle: "From Suicidal Depression to Joyful Life & Physical Healing",
+                timeline: [
+                    {
+                        phase: "Crisis Point",
+                        title: "🔴 Rock Bottom",
+                        content: "2019: Successful IT executive coaching other employees, married with 2 children, but deeply depressed and suicidal. Hospitalized twice with bowel obstruction.",
+                        type: "trigger"
+                    },
+                    {
+                        phase: "Health Crisis",
+                        title: "⚠️ Physical Breakdown",
+                        content: "Diagnosed with Crohn's disease 7 years earlier. On liquid diet only, chronic pain, taking steroid medications. Body was shutting down from holding onto emotional pain.",
+                        type: "trigger"
+                    },
+                    {
+                        phase: "The Quest Begins",
+                        title: "🧘‍♀️ Personal Alchemy Journey",
+                        content: "Started with 'The Four S's' - slowing down, simplifying, self-care, sitting in silence. Learned to pace different areas of life and create space for healing.",
+                        type: "journey"
+                    },
+                    {
+                        phase: "Identity Work",
+                        title: "🧬 Identity Alchemy Journey",
+                        content: "Explored relationships with God, husband, children, environment. Learned to excavate and express suppressed feelings instead of holding them in her body.",
+                        type: "journey"
+                    },
+                    {
+                        phase: "Emotional Breakthrough",
+                        title: "💕 Marriage Transformation",
+                        content: "Learned to express to husband all that she was feeling and repressing. Marriage transformed from near-divorce to finding love and joy together.",
+                        type: "result"
+                    },
+                    {
+                        phase: "Physical Healing",
+                        title: "🌟 Complete Health Recovery",
+                        content: "18 months: Pain-free, off steroid medications, eating solid foods again after 7 years. Mind-body connection healing through emotional release.",
+                        type: "result"
+                    },
+                    {
+                        phase: "Full Integration",
+                        title: "🎯 Living with Joy",
+                        content: "Found energy to start new business. Closer relationships with God, family, and environment. Living life with purpose and fulfillment.",
+                        type: "result"
+                    }
+                ],
+                stats: [
+                    { number: "18 Months", label: "Complete Transformation" },
+                    { number: "7 Years", label: "Crohn's Disease Healed" },
+                    { number: "0 mg", label: "Steroid Medications" },
+                    { number: "100%", label: "Marriage Satisfaction" }
+                ]
+            },
+            mumin: {
+                name: "Mumin",
+                title: "19-Year-Old Advertising Executive",
+                subtitle: "From 2 Years of Insomnia to Nightmare-Free in 90 Days",
+                timeline: [
+                    {
+                        phase: "Trauma",
+                        title: "🔴 The Triggering Event",
+                        content: "Physically abused at local mosque. This trauma led to 2 years of constant nightmares and complete inability to sleep. Only 19 years old but already a leader in advertising.",
+                        type: "trigger"
+                    },
+                    {
+                        phase: "Living Hell",
+                        title: "😴 2 Years of Insomnia",
+                        content: "Couldn't sleep for 2 years due to nightmares and reliving trauma. Despite this, continued excelling at work and got promotions. Living in constant fear and exhaustion.",
+                        type: "trigger"
+                    },
+                    {
+                        phase: "First Client",
+                        title: "🌟 Taniya's First Online Client",
+                        content: "Before Taniya even officially started her business, Mumin became her first client. This case gave Taniya the confidence to launch her coaching business.",
+                        type: "journey"
+                    },
+                    {
+                        phase: "The Healing Process",
+                        title: "🧘‍♀️ 90-Day Intensive",
+                        content: "9 sessions over 12 weeks. Used breathwork, Quranic stories, brain science education, sleep routine optimization, and bedtime routine restructuring.",
+                        type: "journey"
+                    },
+                    {
+                        phase: "Breakthrough",
+                        title: "⚡ Session 8 Miracle",
+                        content: "Session 8: Reported no nightmares for over a week. Session 9: Nightmare-free for over 2 weeks. After 2 years of terror, finally sleeping peacefully.",
+                        type: "result"
+                    },
+                    {
+                        phase: "Life Integration",
+                        title: "🎯 Beyond Sleep Recovery",
+                        content: "Next 3 months: Worked on career goals and assertiveness. Got promotion at advertising agency. Improved family relationships and learned to express himself.",
+                        type: "result"
+                    },
+                    {
+                        phase: "Long-term Success",
+                        title: "🌟 Permanent Transformation",
+                        content: "Nightmares never returned. Transformation was lasting. Went from feeling unsupported as only man in household of women to confident family member.",
+                        type: "result"
+                    }
+                ],
+                stats: [
+                    { number: "90 Days", label: "Nightmare-Free" },
+                    { number: "9 Sessions", label: "Total Sessions" },
+                    { number: "2 Years", label: "Insomnia Cured" },
+                    { number: "19 Years", label: "Age of Client" }
+                ]
+            }
+        };
 
-<script>
-const journeyData = {
-  liz: {
-    name: "Liz",
-    title: "Business Owner + Special Needs Mum",
-    subtitle: "From Burnt-Out to £45K in 180 Days",
-    timeline: [
-      {
-        phase: "Crisis",
-        title: "Pandemic Shutdown",
-        content: "Her income dropped to zero. She was caring for her neurodivergent son while navigating marital strain and complete exhaustion.",
-        type: "trigger"
-      },
-      {
-        phase: "Turning Point",
-        title: "Joined the Mastermind",
-        content: "She began to slow down, set boundaries, and stop chasing. We simplified her offers and rebuilt trust in her intuition.",
-        type: "journey"
-      },
-      {
-        phase: "Breakthrough",
-        title: "Revenue & Respect",
-        content: "In 6 months, she generated £45K. She ended her marriage peacefully and reclaimed her emotional + physical energy.",
-        type: "result"
-      }
-    ],
-    stats: [
-      { number: "£45K", label: "In 180 Days" },
-      { number: "1", label: "Business Rebuild" },
-      { number: "∞", label: "Freedom Gained" }
-    ]
-  },
+        function showJourney(clientName) {
+            const journey = journeyData[clientName];
+            const modal = document.getElementById('journeyModal');
+            const content = document.getElementById('journeyContent');
+            
+            let timelineHtml = '';
+            journey.timeline.forEach(item => {
+                timelineHtml += `
+                    <div class="timeline-item ${item.type}">
+                        <div class="timeline-phase">${item.phase}</div>
+                        <div class="timeline-title">${item.title}</div>
+                        <div class="timeline-content">${item.content}</div>
+                    </div>
+                `;
+            });
 
-  asma: {
-    name: "Asma",
-    title: "IT Executive & Mother",
-    subtitle: "From Survival Mode to Spiritual Joy",
-    timeline: [
-      {
-        phase: "Crisis",
-        title: "Crohn’s, Isolation, Breakdown",
-        content: "She was on daily steroids, couldn’t eat solid food, disconnected from her husband, and carrying a lifetime of emotional silence.",
-        type: "trigger"
-      },
-      {
-        phase: "Healing Phase",
-        title: "Reflective Space Journey",
-        content: "Together we unearthed her suppressed grief, integrated spiritual practices, and rebuilt emotional trust within her marriage.",
-        type: "journey"
-      },
-      {
-        phase: "Transformation",
-        title: "Vitality Returned",
-        content: "She’s off steroids. Eats freely. Her marriage is restored. And her joy returned — not from doing more, but from being more present.",
-        type: "result"
-      }
-    ],
-    stats: [
-      { number: "0", label: "Steroids Today" },
-      { number: "3x", label: "Energy Capacity" },
-      { number: "1", label: "Rebuilt Marriage" }
-    ]
-  },
+            let statsHtml = '';
+            journey.stats.forEach(stat => {
+                statsHtml += `
+                    <div class="stat-card">
+                        <div class="stat-number">${stat.number}</div>
+                        <div class="stat-label">${stat.label}</div>
+                    </div>
+                `;
+            });
+            
+            content.innerHTML = `
+                <div class="journey-header">
+                    <h2>${journey.name}</h2>
+                    <div class="journey-subtitle">${journey.title}</div>
+                    <div style="margin-top: 10px; font-size: 1.1em;">${journey.subtitle}</div>
+                </div>
+                <div class="journey-body">
+                    <div class="stats-grid">
+                        ${statsHtml}
+                    </div>
+                    <div class="journey-timeline">
+                        ${timelineHtml}
+                    </div>
+                </div>
+            `;
+            
+            modal.style.display = 'block';
+        }
 
-  mumin: {
-    name: "Mumin",
-    title: "Advertising Exec",
-    subtitle: "From 2 Years of Insomnia to Restful Sleep",
-    timeline: [
-      {
-        phase: "Crisis",
-        title: "Spiritual Trauma",
-        content: "After childhood abuse at his local mosque, he couldn’t sleep for 2 years. Nightmares. Panic. Rage. Nothing worked.",
-        type: "trigger"
-      },
-      {
-        phase: "The Work",
-        title: "Alchemy Sessions",
-        content: "We worked somatically. He faced the shame, restructured his routines, and softened his nervous system with embodied faith.",
-        type: "journey"
-      },
-      {
-        phase: "Breakthrough",
-        title: "Sleep Restored",
-        content: "After just a few months, he started sleeping again — peacefully, consistently. The rage turned into clarity. The fear into gentleness.",
-        type: "result"
-      }
-    ],
-    stats: [
-      { number: "2", label: "Years Without Sleep" },
-      { number: "90 Days", label: "To Recovery" },
-      { number: "9", label: "Alchemy Sessions" }
-    ]
-  }
-};
+        function closeJourney() {
+            document.getElementById('journeyModal').style.display = 'none';
+        }
 
-function showJourney(clientKey) {
-  const data = journeyData[clientKey];
-  const modal = document.getElementById('journeyModal');
-  const content = document.getElementById('journeyContent');
-
-  let timelineHTML = data.timeline.map(item => `
-    <div class="timeline-item ${item.type}">
-      <div class="timeline-phase">${item.phase}</div>
-      <div class="timeline-title">${item.title}</div>
-      <div class="timeline-content">${item.content}</div>
-    </div>
-  `).join('');
-
-  let statsHTML = data.stats.map(stat => `
-    <div class="stat-card">
-      <div class="stat-number">${stat.number}</div>
-      <div class="stat-label">${stat.label}</div>
-    </div>
-  `).join('');
-
-  content.innerHTML = `
-    <div class="journey-header">
-      <h2>${data.name}</h2>
-      <div class="journey-subtitle">${data.title}</div>
-      <div style="margin-top: 10px; font-size: 1.1em;">${data.subtitle}</div>
-    </div>
-    <div class="journey-body">
-      <div class="stats-grid">${statsHTML}</div>
-      <div class="journey-timeline">${timelineHTML}</div>
-    </div>
-  `;
-
-  modal.style.display = 'block';
-}
-
-function closeJourney() {
-  document.getElementById('journeyModal').style.display = 'none';
-}
-
-window.onclick = function(event) {
-  const modal = document.getElementById('journeyModal');
-  if (event.target === modal) {
-    modal.style.display = 'none';
-  }
-};
-</script>
-
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('journeyModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 </html>
