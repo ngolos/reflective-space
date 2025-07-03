@@ -810,3 +810,80 @@
                         phase: "Life Integration",
                         title: "🎯 Beyond Sleep Recovery",
                         content: "Next 3 months: Worked on career goals and assertiveness. Got promotion at advertising agency. Improved family relationships and learned to express himself.",
+                        type: "result"
+                    },
+                    {
+                        phase: "Long-term Success",
+                        title: "🌟 Permanent Transformation",
+                        content: "Nightmares never returned. Transformation was lasting. Went from feeling unsupported as only man in household of women to confident family member.",
+                        type: "result"
+                    }
+                ],
+                stats: [
+                    { number: "90 Days", label: "Nightmare-Free" },
+                    { number: "9 Sessions", label: "Total Sessions" },
+                    { number: "2 Years", label: "Insomnia Cured" },
+                    { number: "19 Years", label: "Age of Client" }
+                ]
+            }
+        };
+
+        function showJourney(clientName) {
+            const journey = journeyData[clientName];
+            const modal = document.getElementById('journeyModal');
+            const content = document.getElementById('journeyContent');
+            
+            let timelineHtml = '';
+            journey.timeline.forEach(item => {
+                timelineHtml += `
+                    <div class="timeline-item ${item.type}">
+                        <div class="timeline-phase">${item.phase}</div>
+                        <div class="timeline-title">${item.title}</div>
+                        <div class="timeline-content">${item.content}</div>
+                    </div>
+                `;
+            });
+
+            let statsHtml = '';
+            journey.stats.forEach(stat => {
+                statsHtml += `
+                    <div class="stat-card">
+                        <div class="stat-number">${stat.number}</div>
+                        <div class="stat-label">${stat.label}</div>
+                    </div>
+                `;
+            });
+            
+            content.innerHTML = `
+                <div class="journey-header">
+                    <h2>${journey.name}</h2>
+                    <div class="journey-subtitle">${journey.title}</div>
+                    <div style="margin-top: 10px; font-size: 1.1em;">${journey.subtitle}</div>
+                </div>
+                <div class="journey-body">
+                    <div class="stats-grid">
+                        ${statsHtml}
+                    </div>
+                    <div class="journey-timeline">
+                        ${timelineHtml}
+                    </div>
+                </div>
+            `;
+            
+            modal.style.display = 'block';
+        }
+
+        function closeJourney() {
+            document.getElementById('journeyModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('journeyModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
