@@ -1054,96 +1054,147 @@
         </div>
     </div>
 
-    <script>
+<script>
 const journeyData = {
-    liz: {
-        name: "Liz",
-        title: "Business Owner & Coach",
-        subtitle: "From Business Collapse to $495K Revenue + Freedom",
-        timeline: [
-            { phase: "Crisis", title: "Pandemic Hit", content: "Her business dropped to zero. She felt lost and exhausted.", type: "trigger" },
-            { phase: "First Step", title: "Discovery Call", content: "Spoke to Taniya and felt seen for the first time.", type: "journey" },
-            { phase: "Breakthrough", title: "Emotional Alchemy", content: "Released patterns of overgiving and started earning with ease.", type: "result" }
-        ],
-        stats: [
-            { number: "$495K", label: "Revenue" },
-            { number: "10 Months", label: "Life Turnaround" }
-        ]
-    },
-    asma: {
-        name: "Asma",
-        title: "IT Executive",
-        subtitle: "From Suicidal to Healed & Joyful",
-        timeline: [
-            { phase: "Crisis", title: "Crohn's & Collapse", content: "Years of pain and steroids, lost joy and marriage connection.", type: "trigger" },
-            { phase: "Healing", title: "Started Alchemy", content: "Slowed down, simplified life, expressed emotions.", type: "journey" },
-            { phase: "Transformation", title: "Marriage & Health Restored", content: "Off meds, solid food again, joyful home life.", type: "result" }
-        ],
-        stats: [
-            { number: "18 Months", label: "Full Recovery" },
-            { number: "0 mg", label: "Steroids" }
-        ]
-    },
-    mumin: {
-        name: "Mumin",
-        title: "Ad Executive",
-        subtitle: "From 2 Years of Insomnia to Peace",
-        timeline: [
-            { phase: "Trigger", title: "Abuse at Mosque", content: "Suffered trauma and couldn’t sleep for 2 years.", type: "trigger" },
-            { phase: "Process", title: "Sessions with Taniya", content: "Used breathwork and routine restructuring.", type: "journey" },
-            { phase: "Breakthrough", title: "Slept Again", content: "Nightmares stopped, rest returned.", type: "result" }
-        ],
-        stats: [
-            { number: "90 Days", label: "To Sleep Recovery" },
-            { number: "9", label: "Sessions" }
-        ]
-    }
+  liz: {
+    name: "Liz",
+    title: "Business Owner + Special Needs Mum",
+    subtitle: "From Burnt-Out to £45K in 180 Days",
+    timeline: [
+      {
+        phase: "Crisis",
+        title: "Pandemic Shutdown",
+        content: "Her income dropped to zero. She was caring for her neurodivergent son while navigating marital strain and complete exhaustion.",
+        type: "trigger"
+      },
+      {
+        phase: "Turning Point",
+        title: "Joined the Mastermind",
+        content: "She began to slow down, set boundaries, and stop chasing. We simplified her offers and rebuilt trust in her intuition.",
+        type: "journey"
+      },
+      {
+        phase: "Breakthrough",
+        title: "Revenue & Respect",
+        content: "In 6 months, she generated £45K. She ended her marriage peacefully and reclaimed her emotional + physical energy.",
+        type: "result"
+      }
+    ],
+    stats: [
+      { number: "£45K", label: "In 180 Days" },
+      { number: "1", label: "Business Rebuild" },
+      { number: "∞", label: "Freedom Gained" }
+    ]
+  },
+
+  asma: {
+    name: "Asma",
+    title: "IT Executive & Mother",
+    subtitle: "From Survival Mode to Spiritual Joy",
+    timeline: [
+      {
+        phase: "Crisis",
+        title: "Crohn’s, Isolation, Breakdown",
+        content: "She was on daily steroids, couldn’t eat solid food, disconnected from her husband, and carrying a lifetime of emotional silence.",
+        type: "trigger"
+      },
+      {
+        phase: "Healing Phase",
+        title: "Reflective Space Journey",
+        content: "Together we unearthed her suppressed grief, integrated spiritual practices, and rebuilt emotional trust within her marriage.",
+        type: "journey"
+      },
+      {
+        phase: "Transformation",
+        title: "Vitality Returned",
+        content: "She’s off steroids. Eats freely. Her marriage is restored. And her joy returned — not from doing more, but from being more present.",
+        type: "result"
+      }
+    ],
+    stats: [
+      { number: "0", label: "Steroids Today" },
+      { number: "3x", label: "Energy Capacity" },
+      { number: "1", label: "Rebuilt Marriage" }
+    ]
+  },
+
+  mumin: {
+    name: "Mumin",
+    title: "Advertising Exec",
+    subtitle: "From 2 Years of Insomnia to Restful Sleep",
+    timeline: [
+      {
+        phase: "Crisis",
+        title: "Spiritual Trauma",
+        content: "After childhood abuse at his local mosque, he couldn’t sleep for 2 years. Nightmares. Panic. Rage. Nothing worked.",
+        type: "trigger"
+      },
+      {
+        phase: "The Work",
+        title: "Alchemy Sessions",
+        content: "We worked somatically. He faced the shame, restructured his routines, and softened his nervous system with embodied faith.",
+        type: "journey"
+      },
+      {
+        phase: "Breakthrough",
+        title: "Sleep Restored",
+        content: "After just a few months, he started sleeping again — peacefully, consistently. The rage turned into clarity. The fear into gentleness.",
+        type: "result"
+      }
+    ],
+    stats: [
+      { number: "2", label: "Years Without Sleep" },
+      { number: "90 Days", label: "To Recovery" },
+      { number: "9", label: "Alchemy Sessions" }
+    ]
+  }
 };
 
 function showJourney(clientKey) {
-    const data = journeyData[clientKey];
-    const modal = document.getElementById('journeyModal');
-    const content = document.getElementById('journeyContent');
+  const data = journeyData[clientKey];
+  const modal = document.getElementById('journeyModal');
+  const content = document.getElementById('journeyContent');
 
-    let timelineHTML = data.timeline.map(item => `
-        <div class="timeline-item ${item.type}">
-            <div class="timeline-phase">${item.phase}</div>
-            <div class="timeline-title">${item.title}</div>
-            <div class="timeline-content">${item.content}</div>
-        </div>
-    `).join('');
+  let timelineHTML = data.timeline.map(item => `
+    <div class="timeline-item ${item.type}">
+      <div class="timeline-phase">${item.phase}</div>
+      <div class="timeline-title">${item.title}</div>
+      <div class="timeline-content">${item.content}</div>
+    </div>
+  `).join('');
 
-    let statsHTML = data.stats.map(stat => `
-        <div class="stat-card">
-            <div class="stat-number">${stat.number}</div>
-            <div class="stat-label">${stat.label}</div>
-        </div>
-    `).join('');
+  let statsHTML = data.stats.map(stat => `
+    <div class="stat-card">
+      <div class="stat-number">${stat.number}</div>
+      <div class="stat-label">${stat.label}</div>
+    </div>
+  `).join('');
 
-    content.innerHTML = `
-        <div class="journey-header">
-            <h2>${data.name}</h2>
-            <div class="journey-subtitle">${data.title}</div>
-            <div style="margin-top: 10px; font-size: 1.1em;">${data.subtitle}</div>
-        </div>
-        <div class="journey-body">
-            <div class="stats-grid">${statsHTML}</div>
-            <div class="journey-timeline">${timelineHTML}</div>
-        </div>
-    `;
+  content.innerHTML = `
+    <div class="journey-header">
+      <h2>${data.name}</h2>
+      <div class="journey-subtitle">${data.title}</div>
+      <div style="margin-top: 10px; font-size: 1.1em;">${data.subtitle}</div>
+    </div>
+    <div class="journey-body">
+      <div class="stats-grid">${statsHTML}</div>
+      <div class="journey-timeline">${timelineHTML}</div>
+    </div>
+  `;
 
-    modal.style.display = 'block';
+  modal.style.display = 'block';
 }
 
 function closeJourney() {
-    document.getElementById('journeyModal').style.display = 'none';
+  document.getElementById('journeyModal').style.display = 'none';
 }
 
 window.onclick = function(event) {
-    const modal = document.getElementById('journeyModal');
-    if (event.target === modal) {
-        modal.style.display = 'none';
-    }
+  const modal = document.getElementById('journeyModal');
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
 };
 </script>
+
 </html>
